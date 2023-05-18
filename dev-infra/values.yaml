@@ -1,0 +1,12 @@
+# Tell ArgoCD where to find the ubiquitous-journey project
+source: https://github.com/DarkDragonEl/devopsday-gitops.git
+team: dev
+release: infra
+
+applications:
+  # Tooling to support CI/CD
+  - name: dev-pipeline
+    enabled: false
+    source_path: "."
+    helm_values:
+      - dev-pipeline/dev-pipeline-values.yaml

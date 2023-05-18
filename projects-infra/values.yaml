@@ -1,0 +1,18 @@
+# Tell ArgoCD where to find the ubiquitous-journey project
+source: https://github.com/DarkDragonEl/devopsday-gitops.git
+team: prod
+release: infra
+
+applications:
+  # Tooling to support CI/CD
+  - name: ecommerce-infra
+    enabled: false
+    source_path: "."
+    helm_values:
+      - ecommerce/ecommerce-infra-values.yaml
+
+  - name: servicios-infra
+    enabled: false
+    source_path: "."
+    helm_values:
+      - servicios/servicios-infra-values.yaml

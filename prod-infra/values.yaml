@@ -1,0 +1,12 @@
+# Tell ArgoCD where to find the ubiquitous-journey project
+source: https://github.com/DarkDragonEl/devopsday-gitops.git
+team: prod
+release: infra
+
+applications:
+  # Tooling to support CI/CD
+  - name: prod-bootstrap
+    enabled: true
+    source_path: "."
+    helm_values:
+      - bootstrap/prod-bootstrap-values.yaml

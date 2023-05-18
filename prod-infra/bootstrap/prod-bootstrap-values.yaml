@@ -1,0 +1,25 @@
+
+prod_tools_namespace: &prod_tools "prod-tools"
+
+# App of applications list
+applications:
+  # Bootstrap Project
+  - name: bootstrap
+    enabled: true
+    source: https://redhat-cop.github.io/helm-charts
+    chart_name: bootstrap-project
+    source_ref: "1.0.1"
+    values:
+      bindings: &binds # this labs-devs is the GROUP NAME in IDM
+        - name: devs
+          kind: Group
+          role: edit
+        # this labs-admins is the GROUP NAME in IDM
+        - name: admins
+          kind: Group
+          role: admin
+      namespaces:
+        - name: *prod_tools
+          bindings: *binds
+          operatorgroup: false
+      serviceaccounts: []
