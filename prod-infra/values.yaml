@@ -7,6 +7,12 @@ applications:
   # Tooling to support CI/CD
   - name: prod-bootstrap
     enabled: true
-    source_path: "."
+    source_path: "prod-infra"
     helm_values:
       - bootstrap/prod-bootstrap-values.yaml
+
+  - name: dev-stage-bootstrap
+    enabled: true
+    source_path: "prod-infra"
+    helm_values:
+      - bootstrap/dev-stage-bootstrap-values.yaml
