@@ -5,7 +5,7 @@ stage_tools_namespace: &stage_tools "stage-tools"
 # App of applications list
 applications:
   # Bootstrap Project
-  - name: bootstrap
+  - name: dev-stage-bootstrap
     enabled: true
     source: https://redhat-cop.github.io/helm-charts
     chart_name: bootstrap-project
