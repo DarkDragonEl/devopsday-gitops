@@ -5,13 +5,13 @@ release: infra
 
 applications:
   # Tooling to support CI/CD
-  - name: prod-bootstrap
+  - name: prod-infra
     enabled: true
     source_path: "prod-infra"
     helm_values:
       - bootstrap/prod-bootstrap-values.yaml
 
-  - name: dev-stage-bootstrap
+  - name: dev-stage-infra
     enabled: true
     source_path: "prod-infra"
     helm_values:
